@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
---*/
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -14164,7 +14154,7 @@ ul {
 :root {
   --theme-color: #21174a;
   --theme-yellow: #fac70b;
-  --theme-rose: #df0e62;
+  --theme-rose: #df370e;
   --theme-title: #0c0f0a;
   --theme-nav: #262626;
   --theme-dark: #111;
@@ -14182,7 +14172,7 @@ ul {
 }
 
 [data-theme="dark"] {
-  --theme-rose: #df0e62;
+  --theme-rose: #df370e;
   --theme-para: #888;
   --theme-hd-bg: #0c0f0a;
   --theme-dark: #111;
