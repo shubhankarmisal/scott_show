@@ -1,7 +1,7 @@
 
 
 	<!-- footer-66 -->
-	<footer class="w3l-footer">
+	<!-- <footer class="w3l-footer">
 		<section class="footer-inner-main">
 			<div class="footer-hny-grids py-5">
 				<div class="container py-lg-4">
@@ -97,6 +97,8 @@
 					</div>
 				</div>
 			</div>
+        </section>
+	</footer> -->
 			<!-- move top -->
 			<button onclick="topFunction()" id="movetop" title="Go to top">
 				<span class="fa fa-arrow-up" aria-hidden="true"></span>
@@ -129,7 +131,14 @@
 
 </html>
 
+<!-- Contact us -->
+<script type="text/javascript" src="assets/js/contact-us.js"></script>
+<script type="text/javascript" src="assets/js/as-alert-message.min.js"></script>
+
+
 <!-- responsive tabs -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+
 <script src="assets/js/jquery-1.9.1.min.js"></script>
 <script src="assets/js/easyResponsiveTabs.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
@@ -145,3 +154,63 @@
 <script src="assets/js/jquery.waypoints.min.js"></script>
 <script src="assets/js/jquery.countup.js"></script>
 <script type="text/javascript" src='assets/js/swiper.min.js'></script>
+
+
+
+<script>
+	$(function () {
+		$('.navbar-toggler').click(function () {
+			$('body').toggleClass('noscroll');
+		})
+	});
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+<!--/MENU-JS-->
+<script>
+	$(window).on("scroll", function () {
+		var scroll = $(window).scrollTop();
+
+		if (scroll >= 80) {
+			$("#site-header").addClass("nav-fixed");
+		} else {
+			$("#site-header").removeClass("nav-fixed");
+		}
+	});
+
+	//Main navigation Active Class Add Remove
+	$(".navbar-toggler").on("click", function () {
+		$("header").toggleClass("active");
+	});
+	$(document).on("ready", function () {
+		if ($(window).width() > 991) {
+			$("header").removeClass("active");
+		}
+		$(window).on("resize", function () {
+			if ($(window).width() > 991) {
+				$("header").removeClass("active");
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		//Horizontal Tab
+		$('#parentHorizontalTab').easyResponsiveTabs({
+			type: 'default', //Types: default, vertical, accordion
+			width: 'auto', //auto or any width like 600px
+			fit: true, // 100% fit in a container
+			tabidentify: 'hor_1', // The tab groups identifier
+			activate: function (event) { // Callback function if tab is switched
+				var $tab = $(this);
+				var $info = $('#nested-tabInfo');
+				var $name = $('span', $info);
+				$name.text($tab.text());
+				$info.show();
+			}
+		});
+	});
+</script>
+
+
+

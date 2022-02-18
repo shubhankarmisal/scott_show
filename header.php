@@ -1,3 +1,7 @@
+<?php session_start(); ?>
+
+
+
 <!doctype html>
 <html lang="zxx">
 
@@ -6,10 +10,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Home</title>
-
+	
 	<link rel="stylesheet" href="assets/css/style-starter.css">
 	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
 		rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../assets/css/admin_login.css">
+    
 </head>
 
 <body>
@@ -40,16 +46,30 @@
 							<a class="nav-link" href="index.php">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="movies.html">Movies</a>
+							<a class="nav-link" href="movies.php">Movies</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="about.php">About</a>
 						</li>
-
-
 						<li class="nav-item">
-							<a class="nav-link" href="Contact_Us.html">Contact</a>
+							<a class="nav-link" href="Contact_Us.php">Contact</a>
 						</li>
+						<?php 
+						if(isset( $_SESSION["user"])){
+							
+							?>
+							<li class="nav-item">
+							<a class="nav-link" href="admin_login.php"><?php echo $_SESSION["user"] ?></a>
+						    </li>
+							<li class="nav-item">
+							<a class="nav-link btn btn-danger" href="logout_engin.php">Logout</a>
+						   </li>
+							<?php 
+						}
+						
+						?>
+
+
 					</ul>
 
 					<!--/search-right-->
@@ -97,7 +117,7 @@
 					<div class="Login_SignUp" id="login"
 						style="font-size: 2rem ; display: inline-block; position: relative;">
 						<!-- <li class="nav-item"> -->
-						<a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a>
+						<a class="nav-link" href="sign_in.php"><i class="fa fa-user-circle-o"></i></a>
 						<!-- </li> -->
 					</div>
 				</div>
@@ -118,3 +138,6 @@
 			</div>
 		</nav>
 	</header>
+
+	
+	
