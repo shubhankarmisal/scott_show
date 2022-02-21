@@ -59,7 +59,7 @@
 							
 							?>
 							<li class="nav-item">
-							<a class="nav-link" href="admin_login.php"><?php echo $_SESSION["user"] ?></a>
+							<a class="nav-link" href="user_profile.php"><?php echo $_SESSION["user"] ?></a>
 						    </li>
 							<li class="nav-item">
 							<a class="nav-link btn btn-danger" href="logout_engin.php">Logout</a>
