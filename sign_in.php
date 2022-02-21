@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+if(isset($_SESSION["user"])){
+	if($_SESSION["user_remark"] == "admin")
+	{
+		header('Location: admin/dashboard.php');
+		
+	}else{
+		header('Location: index.php');
+	}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +21,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Signin</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/as-alert-message.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/as-alert-message.min.css">
 	<link rel="stylesheet" type="text/css"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/sign-in.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style-starter.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/sign-in.css">
 </head>
 
 <body>
@@ -18,7 +33,7 @@
 		<!--/nav-->
 		<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
 			<div class="container">
-				<h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
+				<h1><a class="navbar-brand" href="index.php"><span class="fa fa-play icon-log"
 							aria-hidden="true"></span>
 							MyShowz </a></h1>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,7 +41,7 @@
 				<div class="Login_SignUp" id="login_s">
 					<!-- style="font-size: 2rem ; display: inline-block; position: relative;" -->
 					<!-- <li class="nav-item"> -->
-					<a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a>
+					<a class="nav-link" href="sign_in.php"><i class="fa fa-user-circle-o"></i></a>
 					<!-- </li> -->
 				</div>
 				<!-- toggle switch for light and dark theme -->
@@ -49,33 +64,35 @@
 
 	<div class="container_signup_signin" id="container_signup_signin">
 		<div class="form-container sign-up-container">
-			<form name="sign-up-form" action="#" onsubmit="return signUpValidateForm()">
-				<h1>Create Account</h1>
-				<div class="social-container">
-					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-				</div>
-				<span>or use your email for registration</span>
-				<input name="sign-up-name" type="text" placeholder="Name" />
-				<input name="sign-up-email" type="email" placeholder="Email" />
-				<input name="sign-up-passwd" type="password" placeholder="Password" />
+			<form  action="engine1.php" method="post">
+				<input type="hidden" name="mode" value="sign_up">
+				<h1 class="mb-4">Create Account</h1>
+				
+				<span>your email for registration</span>
+				<input name="sign_up_name" type="text" placeholder="Name" />
+				<input name="sign_up_email" type="email" placeholder="Email" />
+				<input name="sign_up_passwd" type="password" placeholder="Password" />
 				<button>Sign Up</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form name="sign-in-form" style="color: var(--theme-title);" action="#"
+			<form style="color: var(--theme-title);" method="POST" action="loginengin.php"
 				onsubmit="return signInValidateForm()">
-				<h1>Sign in</h1>
-				<div class="social-container">
+				<div class="sign-in mb-4">
+					<h1>Sign in</h1>
+				</div>
+
+				<!-- <div class="social-container">
 					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="social" style="color: var(--theme-title);"><i
 							class="fab fa-google-plus-g"></i></a>
 					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-linkedin-in"></i></a>
-				</div>
-				<span>or use your account</span>
-				<input name="sign-in-email" type="email" placeholder="Email" />
-				<input name="sign-in-passwd" type="password" placeholder="Password" />
+				</div> -->
+				<!-- <span>or use your account</span> -->
+				<label for="exampleInputEmail1" class="form-label">Email address</label>
+
+				<input name="usernametxt" class="form-label" type="text" placeholder="Username" />
+				<input name="passwordtxt" type="password" placeholder="Password" />
 				<a href="#">Forgot your password?</a>
 				<button>Sign In</button>
 			</form>
@@ -136,9 +153,9 @@
 			});
 		});
 	</script>
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="assets/js/sign-in.js"></script>
+	<script type="text/javascript" src="./assets/js/sign-in.js"></script>
 
 </body>
 
