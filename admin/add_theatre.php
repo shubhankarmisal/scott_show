@@ -58,125 +58,125 @@
                   </thead>
                 <tbody>
 
- <?php
+          <?php
 
-    $host= 'localhost';
-    $user= 'root';
-    $password= '';
-    $dbname= 'movies_db';
+            $host= 'localhost';
+            $user= 'root';
+            $password= '';
+            $dbname= 'movies_db';
 
-    $conn= mysqli_connect($host, $user, $password, $dbname);
+            $conn= mysqli_connect($host, $user, $password, $dbname);
 
-    $sql= "SELECT * FROM theatres";
-        $retval= mysqli_query($conn, $sql);
+            $sql= "SELECT * FROM theatres";
+                $retval= mysqli_query($conn, $sql);
 
-        if(mysqli_num_rows($retval) > 0)
-        { 
-          $t_no = 0;
-          while($row= mysqli_fetch_assoc($retval))
-            { 
-              $t_no++
-          ?>
+                if(mysqli_num_rows($retval) > 0)
+                { 
+                  $t_no = 0;
+                  while($row= mysqli_fetch_assoc($retval))
+                    { 
+                      $t_no++
+                  ?>
 
-          <tr>
-                
-                <th scope="row"><?php echo $t_no; ?></th>
-                <td><?php echo $row["t_name"]; ?></td>
-                <td><?php echo $row["t_location"]; ?></td>
-              
-                <td>
-                <button onclick=updateeditmodal(<?php echo '"'.$row["t_name"].'","'.$row['t_location'].'","'.$row['t_id'].'"'; ?>) type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Edit
-                </button>
+                  <tr>
+                        
+                        <th scope="row"><?php echo $t_no; ?></th>
+                        <td><?php echo $row["t_name"]; ?></td>
+                        <td><?php echo $row["t_location"]; ?></td>
+                      
+                        <td>
+                        <button onclick=updateeditmodal(<?php echo '"'.$row["t_name"].'","'.$row['t_location'].'","'.$row['t_id'].'"'; ?>) type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Edit
+                        </button>
 
-                </td>
-                
-                <td>
-                  <form action="engine.php" id="delete_theatre_form" method="post">
-                    <input type="hidden" name="t_id" value="<?php echo $row["t_id"] ?>" >
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                  </form>
-
-
-                </td>
-                
-                
-              
-          </tr>
+                        </td>
+                        
+                        <td>
+                          <form action="engine.php" id="delete_theatre_form" method="post">
+                            <input type="hidden" name="t_id" value="<?php echo $row["t_id"] ?>" >
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                          </form>
 
 
-          
+                        </td>
+                        
+                        
+                      
+                  </tr>
 
 
-            <?php  
-            }
+                  
 
-          }
 
-          mysqli_close($conn);  
+                    <?php  
+                    }
 
-          ?>   
+                  }
 
-          
-          
-                  </tbody>
-                </table>
-          </div>
-          
-          
+                  mysqli_close($conn);  
+
+                  ?>   
+
+                  
+      
+              </tbody>
+            </table>
       </div>
       
+      
+  </div>
+  
 
-       
-    </div>
+   
+</div>
 
-    <!-- Edit Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Udate Theatre</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            
-         
-          <form action="engine.php" method="post" id="update_theatre_form">
-                 <input type="hidden" value="" id="t_idtxt">
-                  <div class="row">
-
-                    <div class="col-12">
-                        <div class="mb-3">
-                         <label for="t_nametxt" class="form-label">Theatre Name:</label>
-                         <input type="text" name="t_nametxt" class="form-control" id="t_nametxt">
-                        </div>
-
-                    </div>
-                    <div class="col-12">
-                        <div class="mb-3">
-                          <label for="t_locationtxt" class="form-label">Theatre Location:</label>
-                          <input type="text" name="t_locationtxt" class="form-control" id="t_locationtxt">
-                        </div>
-
-                    </div>
-                  
-                    <div class="col-12 d-flex align-items-end">
-                        <div class="mb-3">
-                          <button type="submit" class="btn btn-success">Update Theatre</button> 
-                        </div>
-                    </div>
-
-
-                  </div>
-
-          </form>
-
-
-          </div>
-         
-        </div>
+<!-- Edit Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Udate Theatre</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        
+     
+      <form action="engine.php" method="post" id="update_theatre_form">
+             <input type="hidden" value="" id="t_idtxt">
+              <div class="row">
+
+                <div class="col-12">
+                    <div class="mb-3">
+                     <label for="t_nametxt" class="form-label">Theatre Name:</label>
+                     <input type="text" name="t_nametxt" class="form-control" id="t_nametxt">
+                    </div>
+
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                      <label for="t_locationtxt" class="form-label">Theatre Location:</label>
+                      <input type="text" name="t_locationtxt" class="form-control" id="t_locationtxt">
+                    </div>
+
+                </div>
+              
+                <div class="col-12 d-flex align-items-end">
+                    <div class="mb-3">
+                      <button type="submit" class="btn btn-success">Update Theatre</button> 
+                    </div>
+                </div>
+
+
+              </div>
+
+      </form>
+
+
+      </div>
+     
     </div>
+  </div>
+</div>
 
 <?php include("footer_nav.php"); ?>
 

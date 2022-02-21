@@ -1,3 +1,5 @@
+
+
 <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -64,19 +66,25 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                Branch
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="./feedback.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Logout
+                               Feedback
+                            </a>
+                            <a class="nav-link" href="./admin_sign_up.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Add New User 
                             </a>
                             
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                             <a class="nav-link" href="../sign_in.php">
+                                <div class="sb-nav-link-icon"></div>
+                                Logout
+                            </a>
                     </div>
                 </nav>
-            </div>
+</div>
             
             <div id="layoutSidenav_content">
                 <!-- <main>

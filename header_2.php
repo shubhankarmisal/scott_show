@@ -49,10 +49,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="Contact_Us.php">Contact</a>
 						</li>
-                        <li class="nav-item">
-							<a class="nav-link" href="admin_login.php">Admin</a>
-						</li>
-
+                        
 
 
 					</ul>

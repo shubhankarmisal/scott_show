@@ -11,18 +11,19 @@
     <p>If you have a question regarding our services,
       feel free to contact us using the form below.</p>
 
-    <form name="contact-us-form" action="#" onsubmit="return validateForm()">
+    <form name="contact-us-form" method="post" action="engine1.php">
+      <input type="hidden" name="mode" value="addfeedback">
       <div class="row100" id="fname-row100">
         <div class="col">
           <div class="inputBox" id="fname-inputBox">
-            <input type="text" name="fname" onclick="triggerAnim('fname')"/>
+            <input type="text" name="fname">
             <span class="text">First Name</span>
             <span class="line" id="fname-line"></span>
           </div>
         </div>
         <div class="col">
           <div class="inputBox" id="lname-inputBox">
-            <input type="text" name="lname" onclick="triggerAnim('lname')"/>
+            <input type="text" name="lname">
             <span class="text">Last Name</span>
             <span class="line" id="lname-line"></span>
           </div>
@@ -31,14 +32,14 @@
       <div class="row100" id="email-row100">
         <div class="col">
           <div class="inputBox" id="email-inputBox">
-            <input type="email" name="email" pattern="[^ @]*@[^ @]*" onclick="triggerAnim('email')"/>
+            <input type="email" name="email" pattern="[^ @]*@[^ @]*" >
             <span class="text">Email ID</span>
             <span class="line" id="email-line"></span>
           </div>
         </div>
         <div class="col">
           <div class="inputBox" id="tel-inputBox">
-            <input type="tel" name="m-num" onclick="triggerAnim('tel')" />
+            <input type="tel" name="m-num">
             <span class="text">Mobile Number</span>
             <span class="line" id="tel-line"></span>
           </div>

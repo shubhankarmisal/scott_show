@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/as-alert-message.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/contact_us.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
+  <link rel="stylesheet" href="./assets/css/user_profile.css">
   
 </head>
 
@@ -44,9 +45,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="Contact_Us.php">Contact</a>
             </li>
-            <li class="nav-item">
-							<a class="nav-link" href="admin_login.php">Admin</a>
-						</li>
+            
           </ul>
 
           <!--/search-right-->

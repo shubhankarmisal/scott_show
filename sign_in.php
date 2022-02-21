@@ -64,17 +64,14 @@ if(isset($_SESSION["user"])){
 
 	<div class="container_signup_signin" id="container_signup_signin">
 		<div class="form-container sign-up-container">
-			<form name="sign-up-form" action="#" onsubmit="return signUpValidateForm()">
-				<h1>Create Account</h1>
-				<div class="social-container">
-					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-				</div>
-				<span>or use your email for registration</span>
-				<input name="sign-up-name" type="text" placeholder="Name" />
-				<input name="sign-up-email" type="email" placeholder="Email" />
-				<input name="sign-up-passwd" type="password" placeholder="Password" />
+			<form  action="engine1.php" method="post">
+				<input type="hidden" name="mode" value="sign_up">
+				<h1 class="mb-4">Create Account</h1>
+				
+				<span>your email for registration</span>
+				<input name="sign_up_name" type="text" placeholder="Name" />
+				<input name="sign_up_email" type="email" placeholder="Email" />
+				<input name="sign_up_passwd" type="password" placeholder="Password" />
 				<button>Sign Up</button>
 			</form>
 		</div>
