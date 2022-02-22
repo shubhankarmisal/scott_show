@@ -22,7 +22,7 @@
 			<div class="container">
 				<h1><a class="navbar-brand" href="index.php"><span class="fa fa-play icon-log"
 							aria-hidden="true"></span>
-						MyShowz</a></h1>
+						ScottShow</a></h1>
 				<!-- if logo is image enable this   
 						<a class="navbar-brand" href="#index.html">
 							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -43,9 +43,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="movies.php">Movies</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.php">About</a>
-						</li>
+						
 						<li class="nav-item">
 							<a class="nav-link" href="Contact_Us.php">Contact</a>
 						</li>
