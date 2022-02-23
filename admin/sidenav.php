@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                             <a class="nav-link" href="../sign_in.php">
+                             <a class="nav-link" href="../logout_engin.php">
                                 <div class="sb-nav-link-icon"></div>
                                 Logout
                             </a>
