@@ -365,7 +365,7 @@
 	</section>
 	<!--grids-sec2-->
 	<!--mid-slider -->
-	<section class="w3l-mid-slider position-relative">
+	<!-- <section class="w3l-mid-slider position-relative">
 		<div class="companies20-content">
 			<div class="owl-mid owl-carousel owl-theme">
 				<div class="item">
@@ -418,7 +418,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 
 <?php include("footer.php"); ?>

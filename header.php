@@ -27,7 +27,7 @@
 			<div class="container">
 				<h1><a class="navbar-brand" href="index.php"><span class="fa fa-play icon-log"
 							aria-hidden="true"></span>
-						MyShowz</a></h1>
+						ScottShow</a></h1>
 				<!-- if logo is image enable this   
 						<a class="navbar-brand" href="#index.html">
 							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -48,9 +48,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="movies.php">Movies</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.php">About</a>
-						</li>
+						
 						<li class="nav-item">
 							<a class="nav-link" href="Contact_Us.php">Contact</a>
 						</li>
@@ -74,11 +72,11 @@
 
 					<!--/search-right-->
 					<!--/search-right-->
-					<div class="search-right">
+					 <!-- <div class="search-right">
 						<a href="#search" class="btn search-hny mr-lg-3 mt-lg-0 mt-4" title="search">Search <span
-								class="fa fa-search ml-3" aria-hidden="true"></span></a>
-						<!-- search popup -->
-						<div id="search" class="pop-overlay">
+								class="fa fa-search ml-3" aria-hidden="true"></span></a> -->
+						
+						<!-- <div id="search" class="pop-overlay">
 							<div class="popup">
 								<form action="#" method="post" class="search-box">
 									<input type="search" placeholder="Search your Keyword" name="search"
@@ -109,11 +107,11 @@
 								</div>
 							</div>
 							<a class="close" href="#close">×</a>
-						</div>
+						</div> -->
 						<!-- /search popup -->
 						<!--/search-right-->
 
-					</div>
+					</div> 
 					<div class="Login_SignUp" id="login"
 						style="font-size: 2rem ; display: inline-block; position: relative;">
 						<!-- <li class="nav-item"> -->

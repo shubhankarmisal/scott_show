@@ -1219,18 +1219,18 @@
 				</div>
 
 			</div>
-			<div class="button-center text-center mt-3">
+			<!-- <div class="button-center text-center mt-3">
 				<a href="#" class="btn view-button">View all <span class="fa fa-angle-double-right ml-2"
 						aria-hidden="true"></span></a>
-			</div>
+			</div> -->
 		</div>
 	</section>
 
-	<section class="w3l-albums py-5" id="projects">
+     <!-- <section class="w3l-albums py-5" id="projects">
 		<div class="container py-lg-4">
 			<div class="row">
 				<div class="col-lg-12 mx-auto">
-					<!--Horizontal Tab-->
+					
 					<div id="parentHorizontalTab">
 						<ul class="resp-tabs-list hor_1">
 							<li>Recent Movies</li>
@@ -1241,7 +1241,7 @@
 						<div class="resp-tabs-container hor_1">
 							<div class="albums-content">
 								<div class="row">
-									<!--/set1-->
+								
 									<div class="col-lg-4 new-relise-gd mt-lg-0 mt-0">
 										<div class="slider-info">
 											<div class="img-circle">
@@ -1461,7 +1461,7 @@
 							</div>
 							<div class="albums-content">
 								<div class="row">
-									<!--/set1-->
+								
 									<div class="col-lg-4 new-relise-gd mt-lg-0 mt-0">
 										<div class="slider-info">
 											<div class="img-circle">
@@ -1610,7 +1610,7 @@
 							</div>
 							<div class="albums-content">
 								<div class="row">
-									<!--/set3-->
+									
 									<div class="col-lg-4 new-relise-gd mt-lg-0 mt-0">
 										<div class="slider-info">
 											<div class="img-circle">
@@ -1683,7 +1683,7 @@
 										</div>
 
 									</div>
-									<!--/set3-->
+									
 									<div class="col-lg-4 new-relise-gd mt-lg-0 mt-0">
 										<div class="slider-info">
 											<div class="img-circle">
@@ -1761,7 +1761,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>  -->
 	<!--grids-sec2-->
 
 <?php include("footer.php"); ?>
