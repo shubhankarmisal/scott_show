@@ -15,25 +15,58 @@
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-12">
-                        <label for="nametxt" class="labels">Name</label>
-                        <input type="text" id="nametxt" class="form-control"  value=""></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12 mb-2">
-                        <label for="emailtxt" class="labels">Email_ID</label>
-                        <input type="email" id="emailtxt" class="form-control"  value="">
-                    </div>
-                    <div class="col-md-12">
-                        <label for="passwordtxt" class="labels">Password</label>
-                        <input type="password" id="passwordtxt" class="form-control"  value="">
-                    </div>
+            <div class="col-md-12">
 
-                    </div>
+                    <?php
+
+                        $host= 'localhost';
+                        $user= 'root';
+                        $password= '';
+                        $dbname= 'movies_db';
+
+                        $conn= mysqli_connect($host, $user, $password, $dbname);
+
+                        $sql= "SELECT * FROM admin_login";
+                            $retval= mysqli_query($conn, $sql);
+
+                            if(mysqli_num_rows($retval) > 0)
+                            { 
+                           
+                            while($row= mysqli_fetch_assoc($retval))
+                                { 
+                               
+                            ?>
+
+
+
+
+                        <label for="nametxt" ><?php echo $row["uname"]; ?></label>
+                        <input type="text" id="nametxt" class="form-control"  value=""></div>
+                 
+
+               
+                   
                     
+                        <label for="passwordtxt" ><?php echo $row["password"]; ?></label>
+                        <input type="password" id="passwordtxt" class="form-control"  value="">
+                 
+
                 
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></div>
+                
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button>
+                     <?php  
+                    }
+
+                  }
+
+                  mysqli_close($conn);  
+
+                  ?>   
+                </div>
             </div>
+
+            </div>
+
         </div>
         
     </div>
