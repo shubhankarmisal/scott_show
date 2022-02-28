@@ -5,99 +5,58 @@
 	<section class="w3l-main-slider position-relative" id="home">
 		<div class="companies20-content">
 			<div class="owl-one owl-carousel owl-theme">
+			<?php
+
+				$host= 'localhost';
+				$user= 'root';
+				$password= '';
+				$dbname= 'movies_db';
+
+				$conn= mysqli_connect($host, $user, $password, $dbname);
+
+				$sql= "SELECT * FROM add_banner";
+					$retval= mysqli_query($conn, $sql);
+
+					if(mysqli_num_rows($retval) > 0)
+					{ 
+					$b_id = 0;
+					while($row= mysqli_fetch_assoc($retval))
+						{ 
+						$b_id++;
+					?>
 				<div class="item">
 					<li>
-						<div class="slider-info banner-view bg bg2">
+						<div class="slider-info banner-view bg bg2" style="background-image: url(assets/images/<?php echo $row["b_img"]; ?>);">
 							<div class="banner-info">
-								<h3>Latest Movie Trailers</h3>
-								<p>For the first time in the cinematic history of Spider-Man, our friendly 
-									neighborhood hero's identity is revealed, bringing his Super Hero responsibilities 
-									into conflict with his normal life and putting those he cares about most at risk. 
-									.</span></p>
-								<a href="#small-dialog1" class="popup-with-zoom-anim play-view1">
+								<h3><?php echo $row["m_name"]; ?></h3>
+
+								<p><?php echo $row["b_discribtion"]; ?></span></p>
+
+								<a href="#small-dialog<?php echo $b_id; ?>" class="popup-with-zoom-anim play-view1">
 									<span class="video-play-icon">
 										<span class="fa fa-play"></span>
 									</span>
 									<h6>Watch Trailer</h6>
 								</a>
-								<div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
-								<iframe width="853" height="480" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<div id="small-dialog<?php echo $b_id; ?>" class="zoom-anim-dialog mfp-hide">
+								<!-- <iframe width="853" height="480" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+									<?php echo $row["Trailer_Link"]; ?>
 								</div>
 							</div>
 						</div>
 					</li>
 				</div>
-				<div class="item">
-					<li>
-						<div class="slider-info  banner-view banner-top1 bg bg2">
-							<div class="banner-info">
-								<h3>Latest Online Movies</h3>
-								<p>From Indian Filmmaker SS Rajamouli (Director of Baahubali) comes India’s 
-									Biggest Action Drama #RRRMovie, in theatres 25th March, 2022.
-									.</span></p>
-								<a href="#small-dialog2" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon">
-										<span class="fa fa-play"></span>
-									</span>
-									<h6>Watch Trailer</h6>
-								</a>
-								<div id="small-dialog2" class="zoom-anim-dialog mfp-hide">
-								<iframe width="853" height="480" src="https://www.youtube.com/embed/GY4BgdUSpbE" title="YouTube video player" 
-									frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-									 gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
-						</div>
-					</li>
-				</div>
-				<div class="item">
-					<li>
-						<div class="slider-info banner-view banner-top2 bg bg2">
-							<div class="banner-info">
-								<h3>Latest Movie Trailers</h3>
-								<p>This summer, experience the epic conclusion to the Jurassic era as two generations 
-									unite for the first time. Chris Pratt and Bryce Dallas Howard are joined by 
-									Oscar®-winner Laura Dern, Jeff Goldblum and Sam Neill in Jurassic World Dominion, 
-									a bold, timely and breathtaking new adventure that spans the globe. 
-										.</span></p>
-								<a href="#small-dialog3" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon">
-										<span class="fa fa-play"></span>
-									</span>
-									<h6>Watch Trailer</h6>
-								</a>
-								<div id="small-dialog3" class="zoom-anim-dialog mfp-hide">
-								<iframe width="853" height="480" src="https://www.youtube.com/embed/gyGUMpsV3wg" title="YouTube video player" 
-									frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-									gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
-						</div>
-					</li>
-				</div>
-				<div class="item">
-					<li>
-						<div class="slider-info banner-view banner-top3 bg bg2">
-							<div class="banner-info">
-								<h3>Latest Online Movies</h3>
-								<p>Street-smart thief Nathan Drake (Tom Holland) is recruited by seasoned treasure 
-									hunter Victor “Sully” Sullivan (Mark Wahlberg) to recover a fortune lost by Ferdinand 
-									Magellan 500 years ago. .</span></p>
-								<a href="#small-dialog4" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon">
-										<span class="fa fa-play"></span>
-									</span>
-									<h6>Watch Trailer</h6>
-								</a>
-								<div id="small-dialog4" class="zoom-anim-dialog mfp-hide">
-								<iframe width="853" height="480" src="https://www.youtube.com/embed/ScydwH4t_7c" title="YouTube video player" 
-									frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-									gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
-						</div>
-					</li>
-				</div>
+				
+				<?php  
+                    }
+
+                  }
+
+                  mysqli_close($conn);  
+
+                  ?>   
+
+
 			</div>
 		</div>
 	</section>
@@ -125,7 +84,25 @@
 								</figure>
 								<div class="box-content">
 									<h3 class="title">Jurassic World Dominion</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+									<h4> <span class="post"> </span> 
+										</span>
+
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+					<div class="item vhny-grid">
+						<div class="box16">
+							<a href="movies.php">
+								<figure>
+									<img class="img-fluid" src="./assets/images/uncharted.jpg" alt="">
+								</figure>
+								<div class="box-content">
+									<h3 class="title">Uncharted</h3>
+									<h4> <span class="post"> </span> 
 
 										</span>
 
@@ -140,11 +117,11 @@
 						<div class="box16">
 							<a href="movies.php">
 								<figure>
-									<img class="img-fluid" src="assets/images/commando2.jpeg" alt="">
+									<img class="img-fluid" src="./assets/images/RRR.jpg" alt="">
 								</figure>
 								<div class="box-content">
-									<h3 class="title">Commando-3</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+									<h3 class="title">RRR</h3>
+									<h4> <span class="post"> </span> 
 
 										</span>
 
@@ -159,30 +136,11 @@
 						<div class="box16">
 							<a href="movies.php">
 								<figure>
-									<img class="img-fluid" src="assets/images/gujju2.jpeg" alt="">
+									<img class="img-fluid" src="./assets/images/spider_man.jpg" alt="">
 								</figure>
 								<div class="box-content">
-									<h3 class="title">Gujjubhai Most Wanted</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
-
-										</span>
-
-										<span class="post fa fa-heart text-right"></span>
-									</h4>
-								</div>
-								<span class="fa fa-play video-icon" aria-hidden="true"></span>
-							</a>
-						</div>
-					</div>
-					<div class="item vhny-grid">
-						<div class="box16">
-							<a href="movies.php">
-								<figure>
-									<img class="img-fluid" src="assets/images/avtar-2.jpeg" alt="">
-								</figure>
-								<div class="box-content">
-									<h3 class="title">Avatar</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+									<h3 class="title">Spider Man No Way Home</h3>
+									<h4> <span class="post"> </span> 
 
 										</span>
 

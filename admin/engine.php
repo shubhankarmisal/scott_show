@@ -56,10 +56,10 @@ switch($mode){
     break;
 
     case "delete_feedback":
-        $t_id = $_POST["f_id"];
+        $f_id = $_POST["f_id"];
         
         $conn= mysqli_connect($host, $user, $password, $dbname);
-        $sql = "DELETE FROM theatres WHERE t_id = $t_id";
+        $sql = "DELETE FROM feedback WHERE f_id = $f_id";
         if($conn->query($sql) === TRUE){
             echo "successfully deleted feedback";
         }
@@ -121,6 +121,80 @@ switch($mode){
         $conn->close();
 
     break;
+
+    case "add_movies":
+        $m_name = $_POST["movienametxt"];
+        $rel_date = $_POST["releasedatetxt"];
+        $m_director = $_POST["directortxt"];
+        $m_actors = $_POST["actorstxt"];
+        $m_poster = $_POST["movieposterimg"];
+        $m_dis = $_POST["discribtiontxt"];
+        $conn= mysqli_connect($host, $user, $password, $dbname);
+        $sql = "INSERT INTO add_movies(m_name,release_date,director,actors,movie_poster,m_description) 
+                VALUE('$m_name','$rel_date','$m_director','$m_actors','$m_poster','$m_dis')";
+        
+        if($conn->query($sql) === TRUE){
+            echo "successfully added new movie";
+        }
+            else{
+                echo "technical issue";
+            }
+            $conn->close();
+
+    break;
+
+
+    case "add_banner":
+        $b_name = $_POST["movienametxt"];
+        $banner_img = $_POST["bannerimgtxt"];
+        $b_dis = $_POST["discribtiontxt"];
+        $b_trailer = $_POST["trailertxt"];
+        echo $b_trailer;
+        echo $banner_img;
+        $remark = '';
+        $conn= mysqli_connect($host, $user, $password, $dbname);
+        $sql = "INSERT INTO add_banner (m_name,b_img,b_discribtion,Trailer_Link) VALUE('$b_name','$banner_img','$b_dis','$b_trailer')";
+        if($conn->query($sql) === TRUE){
+            echo "successfully added new banner";
+        }
+            else{
+                echo "technical issue";
+            }
+            $conn->close();
+
+    break;
+
+    case "delete_banner":
+        $b_id = $_POST["b_id"];
+        
+        $conn= mysqli_connect($host, $user, $password, $dbname);
+        $sql = "DELETE FROM add_banner WHERE b_id = $b_id";
+        if($conn->query($sql) === TRUE){
+            echo "successfully deleted Banner";
+        }
+            else{
+                echo "technical issue";
+            }
+            $conn->close();
+
+    break;
+
+
+    case "delete_movie":
+        $m_id = $_POST["m_id"];
+        
+        $conn= mysqli_connect($host, $user, $password, $dbname);
+        $sql = "DELETE FROM add_movies WHERE m_id = $m_id";
+        if($conn->query($sql) === TRUE){
+           alert ("successfully deleted movie");
+        }
+            else{
+                echo "technical issue";
+            }
+            $conn->close();
+
+    break;
+
 
 
     default: echo "wrong mode";
