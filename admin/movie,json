@@ -1,0 +1,19 @@
+
+[
+    {
+       "branch":"Dadar",
+       "theator":"IMAX",
+       "screen":{
+           ....
+       },
+       "release_date":"",
+       "movie":"2hr",
+       "upper_price":250,
+       "middle_price":250,
+       "lower_price":250,
+    },
+    {
+        
+    }
+    
+]
