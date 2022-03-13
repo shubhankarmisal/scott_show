@@ -210,7 +210,7 @@ $( "#addbranchform" ).submit(function( event ) {
  // Get some values from elements on the page:
  var $form = $( this ),
    t_id = $form.find( "select[name='selecttheatreAddtxt']" ).val(),
-   branch_nametxt = $form.find( "input[name='branch_nameAddtxt']" ).val(),
+   branch_nameAddtxt = $form.find( "input[name='branch_nameAddtxt']" ).val(),
    addressAddtxt = $form.find( "textarea[name='addressAddtxt']" ).val(),
    jsonAddtxt = $form.find( "textarea[name='jsonAddtxt']" ).val(),
 
@@ -219,7 +219,7 @@ $( "#addbranchform" ).submit(function( event ) {
   // Send the data using post
   var posting = $.post( url, { 
                         't_id': t_id,
-                        'branch_nametxt': branch_nametxt, 
+                        'branch_nameAddtxt': branch_nameAddtxt, 
                         'addressAddtxt': addressAddtxt,
                         'jsonAddtxt': jsonAddtxt,
                         'mode': 'add_branch' 

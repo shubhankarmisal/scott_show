@@ -106,7 +106,7 @@ switch($mode){
 
     case "add_branch":
         $t_id = $_POST["t_id"];
-        $branch_nametxt = $_POST["branch_nametxt"];
+        $branch_nametxt = $_POST["branch_nameAddtxt"];
         $addressAddtxt = $_POST["addressAddtxt"];
         $jsonAddtxt = $_POST["jsonAddtxt"];
 
@@ -145,12 +145,21 @@ switch($mode){
 
 
     case "add_banner":
+
+        $target_dir = "assets/banner
+        ";
+        $target_file = $target_dir . basename($_FILES["bannerimgtxt"]["name"]);
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $target_file = $target_dir ."product".date("d").date("m").date("y").'.'.$imageFileType;
+
+        if (move_uploaded_file($_FILES["bannerimgtxt"]["tmp_name"], $target_file)) {
+
+
         $b_name = $_POST["movienametxt"];
-        $banner_img = $_POST["bannerimgtxt"];
-        $b_dis = $_POST["discribtiontxt"];
+        $banner_img = $target_file;
+        $b_dis = $_POST["descriptiontxt"];
         $b_trailer = $_POST["trailertxt"];
-        echo $b_trailer;
-        echo $banner_img;
+        
         $remark = '';
         $conn= mysqli_connect($host, $user, $password, $dbname);
         $sql = "INSERT INTO add_banner (m_name,b_img,b_discribtion,Trailer_Link) VALUE('$b_name','$banner_img','$b_dis','$b_trailer')";
@@ -162,13 +171,15 @@ switch($mode){
             }
             $conn->close();
 
+        }
+
     break;
 
     case "delete_banner":
-        $b_id = $_POST["b_id"];
+        $ba_id = $_POST["ba_id"];
         
         $conn= mysqli_connect($host, $user, $password, $dbname);
-        $sql = "DELETE FROM add_banner WHERE b_id = $b_id";
+        $sql = "DELETE FROM add_banner WHERE ba_id = '$ba_id'";
         if($conn->query($sql) === TRUE){
             echo "successfully deleted Banner";
         }

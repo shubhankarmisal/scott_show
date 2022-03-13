@@ -2,13 +2,11 @@
 
 <?php include("userprofile_sidebar.php"); ?>
 
- <!-- Order List -->
-   
+ <!-- Histroy List -->
 
-        
         <div class="col-md-10 border-right">
-                  <h4 class="mt-5">Order List :</h4>
-             
+                  <h4 class="mt-5">History:</h4>
+            
                   <div class="table-responsive">
                       <table class="table table-striped">
                        <thead class="table-info">
@@ -39,34 +37,8 @@
                              <button type="submit" class="btn btn-danger">Delete</button>
                            </td>
                          </tr>
-                         <tr>
-                         <th scope="row">1</th>
-                           <td>Mark</td>
-                           <td>Otto</td>
-                           <td>@mdo</td>
-                           <td>@mdo</td>
-                           <td>@mdo</td>
-                           <td>@mdo</td>
-                           
-                           <td>  
-                             <button type="submit" class="btn btn-danger">Delete</button>
-                           </td>
-                         </tr>
-                         <tr>
-                         <th scope="row">1</th>
-                           <td>Mark</td>
-                           <td>Otto</td>
-                           <td>@mdo</td>
-                           <td>@mdo</td>
-                           <td>@mdo</td>
-                           <td>@mdo</td>
-                           
-                           <td>  
-                             <button type="submit" class="btn btn-danger">Delete</button>
-                           </td>
-                         </tr>
+
                         
-                         
                          
                        </tbody>
                      </table>

@@ -5,16 +5,16 @@ $host= 'localhost';
 $user= 'root';
 $password= '';
 $dbname= 'movies_db';
-echo $mode ;
+
 switch($mode){
-    case "addfeedback":
-        $f_name = $_POST["fname"];
-        $l_name = $_POST["lname"];
-        $email_id = $_POST["email"];
-        $m_num = $_POST["m-num"];
-        $f_msg = $_POST["msg"];
+    case "add_feedback":
+        $fname = $_POST["fnametxt"];
+        $lname = $_POST["lnametxt"];
+        $email = $_POST["emailtxt"];
+        $m_num = $_POST["m_numtxt"];
+        $msg= $_POST["msgtxt"];
         $conn= mysqli_connect($host, $user, $password, $dbname);
-        $sql = "INSERT INTO feedback(f_name, l_name, email_id, mobile_no, f_message ) VALUE('$f_name','$l_name','$email_id','$m_num','$f_msg')";
+        $sql = "INSERT INTO feedback(f_name, l_name, email_id, mobile_no, f_message ) VALUE('$$fname','$lname','$email','$m_num','$msg')";
         if($conn->query($sql) === TRUE){
             echo "successfully added new theatres";
         }
@@ -42,6 +42,28 @@ switch($mode){
                     echo "technical issue";
                 }
                 $conn->close();
+
+           
     
             break;
+
+            case "add_userdetails":
+                $f_name = $_POST["fullnametxt"];
+                $u_pass = $_POST["passwordtxt"];
+                $username = $_POST["usernametxt"];
+                $u_num = $_POST["mobiletxt"];
+                $u_msg = $_POST["addresstxt"];
+                $remark = "user";
+                $conn= mysqli_connect($host, $user, $password, $dbname);
+                $sql = "INSERT INTO user_table(u_name,u_pass,username,u_mobile_no,u_address,remark ) VALUE('$f_name','$u_pass','$username','$u_num','$u_msg','user')";
+                if($conn->query($sql) === TRUE){
+                    // echo '<script>alert("user added successfully")</script>';
+                     header('Location: index.php');
+                }
+                    else{
+                        echo "technical issue";
+                    }
+                    $conn->close();
+        
+                break;
 }

@@ -174,7 +174,7 @@
 									<figure>
 										<img class="img-fluid" src="<?php echo $row["movie_poster"]; ?>" alt="">
 									</figure>
-									<a href=".Commando3" data-toggle="modal">
+									<a href=".<?php echo $row["m_name"]; ?>" data-toggle="modal">
 										<div class="box-content">
 											<h3 class="title"><?php echo $row["m_name"]; ?></h3>
 											<h4> <span class="post"> </span>
@@ -186,7 +186,7 @@
 										</div>
 									</a>
 									<!-- Modal -->
-									<div class="modal fade Commando3" id="myModal" tabindex="-1" role="dialog"
+									<div class="modal fade <?php echo $row["m_name"]; ?>" id="myModal" tabindex="-1" role="dialog"
 										aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content" id="mymodalcontent">
@@ -205,7 +205,7 @@
 													</p>
 													<h4>Description</h4>
 													<p>
-													<?php echo $row["m_discribtion"]; ?>
+													<?php echo $row["m_description"]; ?>
 													</p>
 													<h4>Actors</h4>
 													<p>

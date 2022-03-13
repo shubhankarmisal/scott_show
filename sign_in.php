@@ -68,9 +68,8 @@ if(isset($_SESSION["user"])){
 				<input type="hidden" name="mode" value="sign_up">
 				<h1 class="mb-4">Create Account</h1>
 				
-				<span>your email for registration</span>
+				<span>your username and password for registration</span>
 				<input name="sign_up_name" type="text" placeholder="Name" />
-				<input name="sign_up_email" type="email" placeholder="Email" />
 				<input name="sign_up_passwd" type="password" placeholder="Password" />
 				<button>Sign Up</button>
 			</form>
@@ -89,7 +88,7 @@ if(isset($_SESSION["user"])){
 					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-linkedin-in"></i></a>
 				</div> -->
 				<!-- <span>or use your account</span> -->
-				<label for="exampleInputEmail1" class="form-label">Email address</label>
+				<label for="exampleInputEmail1" class="form-label">Username & password</label>
 
 				<input name="usernametxt" class="form-label" type="text" placeholder="Username" />
 				<input name="passwordtxt" type="password" placeholder="Password" />

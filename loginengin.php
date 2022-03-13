@@ -13,7 +13,7 @@
     $conn= mysqli_connect($host, $user, $password, $dbname);
     $valid = false;
     $remark = "";
-
+    
     
     $sql= "SELECT * FROM admin_login";
     $retval= mysqli_query($conn, $sql);
@@ -26,6 +26,7 @@
                
                 $valid = true;
                 $remark = $row["remark"];
+                
                 break;
             }
         }
@@ -35,6 +36,7 @@
     if($valid){
         session_start();
         $_SESSION["user_remark"] = $remark;
+         
         if($remark == "admin"){
             $_SESSION["user"] = $uname;
 
@@ -52,6 +54,7 @@
     }
 
 
+    
 
 
     mysqli_close($conn);  

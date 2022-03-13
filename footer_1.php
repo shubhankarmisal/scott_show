@@ -1,6 +1,8 @@
 <script type="text/javascript" src="assets/js/contact-us.js"></script>
   <script type="text/javascript" src="assets/js/as-alert-message.min.js"></script>
   <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+   
   <!--/theme-change-->
   <script src="assets/js/theme-change.js"></script>
   <!-- disable body scroll which navbar is in active -->

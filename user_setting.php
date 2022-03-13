@@ -4,12 +4,10 @@
 
 
 
-
+<div class="col-md-10 border-right">
         <div class="col-md-5 border-right-left">
           <div class="p-3 py-5">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4 class="text-right">Update Profile</h4>
-              </div>
+              
               <div class="row mt-2">
           <div class="col-md-12 mb-2">
 
@@ -31,6 +29,7 @@
           </div>
 
       </div>
+</div>
 
 
         
