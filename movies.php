@@ -131,7 +131,7 @@
 			</div>
 		</div>
 	</section> -->
-	<!--grids-sec1-->
+	<!--grids-sec1 -->
 	<section class="w3l-grids">
 		<div class="grids-main py-5">
 			<div class="container py-lg-4">
@@ -172,11 +172,11 @@
 								<div class="box16 mb-0">
 								
 									<figure>
-										<img class="img-fluid" src="<?php echo $row["movie_poster"]; ?>" alt="">
+										<img class="img-fluid" src="admin/assets/poster/<?php echo $row["movie_poster"]; ?>" alt="">
 									</figure>
 									<a href=".<?php echo $row["m_name"]; ?>" data-toggle="modal">
 										<div class="box-content">
-											<h3 class="title"><?php echo $row["m_name"]; ?></h3>
+											<h3 class="title"><?php echo $row["movie_name"]; ?></h3>
 											<h4> <span class="post"> </span>
 
 												</span>
@@ -191,30 +191,32 @@
 										<div class="modal-dialog" role="document">
 											<div class="modal-content" id="mymodalcontent">
 												<div class="modal-header">
-													<h4 class="modal-title" id="exampleModalLongTitle"><?php echo $row["m_name"]; ?></h4>
+													<h4 class="modal-title" id="exampleModalLongTitle"><?php echo $row["movie_name"]; ?></h4>
 													<button type="button" class="closebtn" data-dismiss="modal"
 														aria-label="Close">
 														<span aria-hidden="true">&times;</span>
 													</button>
 												</div>
 												<div class="modal-body" id="dynamic-content">
-													<img src="<?php echo $row["movie_poster"]; ?>" class="img-fluid modalimg" alt="" />
+													<img src="admin/assets/poster/<?php echo $row["movie_poster"]; ?>" class="img-fluid modalimg" alt="" />
 													<p>
 														<h3>Release Date&nbsp;:<?php echo $row["release_date"]; ?></h3>
-														<h3>Director&nbsp;:<?php echo $row["director"]; ?></h3>
 													</p>
 													<h4>Description</h4>
 													<p>
 													<?php echo $row["m_description"]; ?>
+
 													</p>
 													<h4>Actors</h4>
 													<p>
 													<?php echo $row["actors"]; ?>
+
+
 													</p>
 												</div>
 												<div class="bookbtn">
 													<button type="button" class="btn btn-success"
-														onclick="location.href='ticket-booking.html';">Book</button>
+													onclick="location.href='ticket-booking.html';">Book Now</button>
 												</div>
 											</div>
 										</div>

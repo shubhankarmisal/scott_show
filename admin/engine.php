@@ -108,10 +108,14 @@ switch($mode){
         $t_id = $_POST["t_id"];
         $branch_nametxt = $_POST["branch_nameAddtxt"];
         $addressAddtxt = $_POST["addressAddtxt"];
+        $stateAddtxt = $_POST["stateAddtxt"];
+        $cityAddtxt = $_POST["cityAddtxt"];
+        $zipcodeAddtxt = $_POST["zipcodeAddtxt"];
+        $countryAddtxt = $_POST["countryAddtxt"];
         $jsonAddtxt = $_POST["jsonAddtxt"];
 
         $conn= mysqli_connect($host, $user, $password, $dbname);
-        $sql = "INSERT INTO branch(t_id,branch_name,b_address,screen_txt) VALUE($t_id,'$branch_nametxt','$addressAddtxt','$jsonAddtxt')";
+        $sql = "INSERT INTO branch(t_id,branch_name,b_address,b_city,b_state,b_country,zipcode,screen_txt) VALUE($t_id,'$branch_nametxt','$addressAddtxt','$cityAddtxt','$stateAddtxt','$countryAddtxt','$zipcodeAddtxt','$jsonAddtxt')";
         if($conn->query($sql) === TRUE){
             echo "successfully added new branch";
         }
@@ -122,27 +126,29 @@ switch($mode){
 
     break;
 
-    case "add_movies":
-        $m_name = $_POST["movienametxt"];
-        $rel_date = $_POST["releasedatetxt"];
-        $m_director = $_POST["directortxt"];
-        $m_actors = $_POST["actorstxt"];
-        $m_poster = $_POST["movieposterimg"];
-        $m_dis = $_POST["discribtiontxt"];
+    case "add_movie":
+        
+
+       
+        $movie_name = $_POST["movie_name"];
+        $release_date = $_POST["release_date"];
+        $movie_poster = $_POST["movie_poster"];
+        $description = $_POST["description"];
+        $json_data = json_encode($_POST["json_data"]);
+
         $conn= mysqli_connect($host, $user, $password, $dbname);
-        $sql = "INSERT INTO add_movies(m_name,release_date,director,actors,movie_poster,m_description) 
-                VALUE('$m_name','$rel_date','$m_director','$m_actors','$m_poster','$m_dis')";
+        $sql = "INSERT INTO add_movies(movie_name,release_date,m_description,movie_poster,remark,jsondata) VALUE('$movie_name','$release_date','$description','$movie_poster','active','$json_data')";
         
         if($conn->query($sql) === TRUE){
             echo "successfully added new movie";
         }
-            else{
-                echo "technical issue";
-            }
-            $conn->close();
+        else{
+            echo "technical issue";
+        }
+        $conn->close();
+        
 
     break;
-
 
     case "add_banner":
 
