@@ -24,7 +24,6 @@
                              <th scope="col">Release Date</th>
                              <th scope="col">Description</th>
                              <th scope="col">Movie Poster</th>
-                             <th  width="80px" scope="col"></th>
                              <th  width="100px" scope="col"></th>
                              
                            </tr>
@@ -66,12 +65,8 @@
                                <img src="assets/poster/<?php echo $row["movie_poster"]; ?>" height="80px">
                               </td>
                              
-                             
-                             <td  valign="middle">
-                               <button type="reset" class="btn btn-primary">Edit</button>
-                              </td>
                               <td valign="middle">
-                                <form action="engine.php" id="delete_movie_form" method="post">
+                                <form action="engine.php" class="delete_movie_form" method="post">
                                   <input type="hidden" name="m_id" value="<?php echo $row['m_id'] ?>" >
                                   <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
@@ -228,7 +223,7 @@
 
 <script>
 
-$( "#delete_movie_form" ).submit(function( event ) {
+$( ".delete_movie_form" ).submit(function( event ) {
  
  // Stop form from submitting normally
  event.preventDefault();
@@ -243,7 +238,7 @@ $( "#delete_movie_form" ).submit(function( event ) {
 
  // Put the results in a div
  posting.done(function( data ) {
-   alert(data);
+   //alert(data);
    location.reload(true);
  });
 });

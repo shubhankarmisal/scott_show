@@ -57,7 +57,7 @@
                                   
                                     
                                     <td>
-                                      <form action="engine.php" id="delete_feedback_form" method="post">
+                                      <form action="engine.php" class="delete_feedback_form" method="post">
                                         <input type="hidden" name="f_id" value="<?php echo $row["f_id"] ?>" >
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                       </form>
@@ -99,7 +99,7 @@
 <?php include("footer_nav.php"); ?>
 
 <script>
-  $( "#delete_feedback_form" ).submit(function( event ) {
+  $( ".delete_feedback_form" ).submit(function( event ) {
  
  // Stop form from submitting normally
  event.preventDefault();

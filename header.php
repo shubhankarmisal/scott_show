@@ -14,8 +14,16 @@
 	<link rel="stylesheet" href="assets/css/style-starter.css">
 	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
 		rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../assets/css/admin_login.css">
-    
+		<!-- <link rel="stylesheet" type="text/css" href="../assets/css/admin_login.css"> -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
+
+		
+  <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/progress.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/ticket-booking.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/e-ticket.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/payment.css" />
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
 </head>
 
 <body>

@@ -5,8 +5,8 @@
  
  <!-- Add Movie Banner -->
 <div class="container">
-  <form action="engine.php" method="post" id="add_banner_form" class="form-control mt-2" >
-    <!-- <input type="hidden" name="mode" value="add_banner"> -->
+  <form action="engine.php" method="post" id="add-banner-form" class="form-control mt-2" >
+    <input type="hidden" name="mode" value="add_banner">
     <div class="add-new-movie pb-3">
         <h4>Add New Banner</h4>
     </div>
@@ -34,10 +34,10 @@
     <div class="row g-3 align-items-center mb-3">
         
         <div class="col-2">
-        <label for="descriptiontxt">Description:</label>
+        <label for="discribtiontxt">Description:</label>
         </div>
         <div class="col-5">
-        <textarea class="form-control" placeholder="Description" name="descriptiontxt" id="descriptiontxt"></textarea>
+        <textarea class="form-control" placeholder="Description" name="discribtiontxt" id="discribtiontxt"></textarea>
         </div>
         
     </div>
@@ -67,11 +67,9 @@
     </div>
                     
   </form>
-</div>  
 
-<!-- Banner Table -->
-    <div class="container">
-        <div class="row">
+
+  <div class="row">
               
                 <div class="col-3 mt-4">
                     <h4>All Movies List :</h4>
@@ -80,12 +78,11 @@
                         <table class="table table-striped">
                          <thead class="table-info">
                            <tr>
-                             <th scope="col">Ba_ID</th>
+                             <th scope="col">B_ID</th>
                              <th scope="col">Movie Name </th>
                              <th scope="col">Banner Img</th>
                              <th scope="col">Description</th>
                              <th scope="col">Trailer Link</th>
-                             <th width="80px" scope="col"></th>
                              <th width="100px" scope="col"></th>
 
                              
@@ -108,24 +105,36 @@
 
                                 if(mysqli_num_rows($retval) > 0)
                                 { 
-                                $ba_no = 0;
+                                $b_no = 0;
                                 while($row= mysqli_fetch_assoc($retval))
                                     { 
-                                    $ba_no++
+                                    $b_no++
                         ?>
 
                            <tr>
-                             <th scope="row"><?php echo $ba_no; ?></th>
+                             <th scope="row"><?php echo $b_no; ?></th>
                              <td><?php echo $row["m_name"]; ?></td>
                              <td><?php echo $row["b_img"]; ?></td>
                              <td><?php echo $row["b_discribtion"]; ?></td>
-                             <td><img src="<?php echo $row["Trailer_Link"]; ?>" alt="" width="50px"></td>
-                             <td >
-                              
-                             </td>
                              <td>
-                             <form action="engine.php" id="delete_banner_form" method="post">
-                              <input type="hidden" name="ba_id" value="<?php echo $row['ba_id'] ?>" >
+                              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $b_no; ?>">
+                                Trailer Link
+                              </button>
+                              <div class="modal fade" id="exampleModal<?php echo $b_no; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                    <div class="modal-body">
+                                      <?php echo $row["Trailer_Link"]; ?>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>      
+                              
+                              </td>
+                             <td>
+                             <form action="engine.php" class="delete_banner_form" method="post">
+                              <input type="hidden" name="b_id" value="<?php echo $row['ba_id'] ?>" >
+                              <input type="hidden" name="mode" value="delete_banner" >
                               <button type="submit" class="btn btn-danger">Delete</button>
                              </form>
 
@@ -147,7 +156,7 @@
          
                 
         </div>
-    </div>
+</div>  
  
 
 <?php include("footer_nav.php"); ?>
@@ -155,48 +164,27 @@
 <script>
 // Delete banner:-
 
-$( "#delete_banner_form" ).submit(function( event ) {
+
+
+
+
+
+
+
+
+$( ".delete_banner_form" ).submit(function( event ) {
  
  // Stop form from submitting normally
  event.preventDefault();
 
  // Get some values from elements on the page:
  var $form = $( this ),
-   ba_id = $form.find( "input[name='ba_id']" ).val(),
+   b_id = $form.find( "input[name='b_id']" ).val(),
    
    url = $form.attr( "action" );
 
  // Send the data using post
- var posting = $.post( url, { 'ba_id': ba_id, 'mode': 'delete_banner' } );
-
- // Put the results in a div
- posting.done(function( data ) {
-   alert(data);
-   location.reload(true);
- });
-});
-
-// Add Banner
-
-$( "#add_banner_form" ).submit(function( event ) {
- 
- // Stop form from submitting normally
- event.preventDefault();
-
- // Get some values from elements on the page:
- var $form = $( this ),
-   movienametxt = $form.find( "input[name='movienametxt']" ).val(),
-   bannerimgtxt = $form.find( "input[name='bannerimgtxt']" ).val(),
-   descriptiontxt = $form.find( "textarea[name='descriptiontxt']" ).val(),
-   trailertxt = $form.find( "input[name='trailertxt']" ).val(),
-   url = $form.attr( "action" );
-
- // Send the data using post
- var posting = $.post( url, { 'movienametxt': movienametxt,
-                              'bannerimgtxt': bannerimgtxt,
-                              'descriptiontxt': descriptiontxt,
-                              'trailertxt': trailertxt,
-                              'mode': 'add_banner' } );
+ var posting = $.post( url, { 'b_id': b_id, 'mode': 'delete_banner' } );
 
  // Put the results in a div
  posting.done(function( data ) {

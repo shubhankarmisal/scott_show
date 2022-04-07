@@ -92,7 +92,7 @@
                         </td>
                         
                         <td>
-                          <form action="engine.php" id="delete_theatre_form" method="post">
+                          <form action="engine.php" class="delete_theatre_form" method="post">
                             <input type="hidden" name="t_id" value="<?php echo $row['t_id'] ?>" >
                             <button type="submit" class="btn btn-danger">Delete</button>
                           </form>
@@ -206,7 +206,7 @@ $( "#add_theatre_form" ).submit(function( event ) {
   });
 });
 
-$( "#delete_theatre_form" ).submit(function( event ) {
+$( ".delete_theatre_form" ).submit(function( event ) {
  
  // Stop form from submitting normally
  event.preventDefault();

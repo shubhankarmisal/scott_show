@@ -31,7 +31,7 @@
 					<li>Selected Seats</li>
 				</ul>
 				<ul class="book-right">
-					<li>: Commando 3</li>
+					<li>: Gangubai Kathiawadi</li>
 					<li>: April 12, 22:00</li>
 					<li>: <span id="counter">0</span></li>
 					<li>: <b><i>RS.</i><span id="total">0</span></b></li>
